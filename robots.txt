@@ -6,4 +6,4 @@ Disallow: /wp-admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.samawakonsultan.com/sitemap.xml
+Sitemap: https://www.samawakonsultan.my.id/sitemap.xml
