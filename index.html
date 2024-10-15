@@ -2143,22 +2143,23 @@
       });
 
       const services = [
-        { name: "PT. Perorangan", price: "250.000" },
-        { name: "PT. Perseroan", price: "4.000.000", highlight: true },
-        { name: "Perubahan Akte/SK", price: "Call Us" },
-        { name: "PPKP/SPT/Validasi NIK", price: "Call Us" },
-        { name: "P-IRT/Halal", price: "250.000" },
-        { name: "SBUIK/IPTL/SKK", price: "Call Us" },
-        { name: "Akuntan Publik", price: "Call Us" },
-        { name: "Pembukaan Blokir AHU/OSS", price: "Call Us" },
-        { name: "Pendirian CV", price: "2.500.000" },
-        { name: "Yayasan/Koperasi", price: "4.500.000" },
-        { name: "NPWP/EFIN/NIIB", price: "250.000" },
-        { name: "Merk - HKI", price: "1.500.000" },
-        { name: "Ekspor/Impor/ PKRT", price: "Call Us" },
-        { name: "ISO/SMK3/K3/ SIO/SLO", price: "Call Us" },
-        { name: "Kominfo PSE", price: "Call Us" },
-        { name: "Pembukaan Rekening", price: "Call Us" },
+        { name: "PT. Perorangan tanpa akta notaris", price: "500.000", pricedisc: "1.000.000", disc: "Promo!" },
+        { name: "PT. Perorangan dengan akta notaris", price: "1,800.000", pricedisc: "1.000.000", disc: "Promo!" },
+        { name: "PT. Perseroan", price: "3.500.000", pricedisc: "4.000.000", disc: "Promo!", highlight: true },
+        { name: "Perubahan Akte/SK", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "PPKP/SPT/Validasi NIK", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "P-IRT/Halal", price: "250.000", pricedisc: "", disc: "" },
+        { name: "SBUIK/IPTL/SKK", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "Akuntan Publik", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "Pembukaan Blokir AHU/OSS", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "Pendirian CV", price: "2.500.000", pricedisc: "3.000.000", disc: "Promo!" },
+        { name: "Yayasan/Koperasi", price: "3.500.000", pricedisc: "5.000.000", disc: "Promo!" },
+        { name: "NPWP/EFIN/NIIB", price: "250.000", pricedisc: "", disc: "" },
+        { name: "Merk - HKI", price: "1.500.000", pricedisc: "", disc: "" },
+        { name: "Ekspor/Impor/ PKRT", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "ISO/SMK3/K3/ SIO/SLO", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "Kominfo PSE", price: "Call Us", pricedisc: "", disc: "" },
+        { name: "Pembukaan Rekening", price: "Call Us", pricedisc: "", disc: "" },
       ];
 
       const serviceList = document.getElementById("serviceList");
@@ -2181,10 +2182,11 @@
 
         div.innerHTML = `
                 <div class="flex flex-col items-center text-center">
-                    <span class="font-medium">${service.name}</span>
-                    <span class="font-bold ${
+                    <p class="font-bold text-red-500">${service.disc}</p>
+                    <p class="font-medium">${service.name}</p>
+                    <p class="font-bold ${
                       service.price === "Call Us" ? "text-yellow-400" : ""
-                    }">${service.price}</span>
+                    }">${service.price} <span class="line-through">${service.pricedisc}</span></p>
                     <a href="${whatsappLink}" target="_blank">
                         <button class="bg-gradient-to-r text-wrap from-primary to-secondary text-white font-semibold rounded-md px-4 py-2 mt-4">
                             Hubungi Kami
